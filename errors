@@ -1,0 +1,27 @@
+bash build/script/validation_git.sh prprdsep25 f82a5cd966714bb52cae24cb310aeaf5d8bb3c0e e380c0a6c4f27235c5ebbccf809cae6aa000708d
+dos2unix: converting file build/testClasses.txt to file build/log/prprdsep25.19_09_2025_01h08m24s.VALIDATION.txt in Unix format...
+cp: cannot stat 'src/classes/testArticleAttachmentPortalController.*': No such file or directory
+cp: cannot stat 'src/classes/testplatformpage.*': No such file or directory
+jq: error: Could not open file build/log/prprdsep25.19_09_2025_01h08m24s.report.json: No such file or directory
+jq: error: Could not open file build/log/prprdsep25.19_09_2025_01h08m24s.report.json: No such file or directory
+jq: error: Could not open file build/log/prprdsep25.19_09_2025_01h08m24s.report.json: No such file or directory
+jq: error: Could not open file build/log/prprdsep25.19_09_2025_01h08m24s.report.json: No such file or directory
+jq: error: Could not open file build/log/prprdsep25.19_09_2025_01h08m24s.report.json: No such file or directory
+fatal: ambiguous argument 'src/customMetadata/CosLiteCategoryMap.trainingModule.md-meta.xml': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+fatal: ambiguous argument 'src/customMetadata/Public_Search_Category.trainingModule.md-meta.xml': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+fatal: ambiguous argument 'src/src/env/prod/customSetting/ArticleRelatedConfig__c.csv': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+fatal: ambiguous argument 'src/src/env/prod/customSetting/GSA_Urls_for_CosMenu__c.csv': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+fatal: ambiguous argument 'src/staticresources/Cadence_Coveo_UI.resource': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+cp: cannot stat '/tmp/prprdsep25.Changeset.log': No such file or directory
+cp: cannot stat '.html': No such file or directory
+cp: cannot stat '.csv': No such file or directory

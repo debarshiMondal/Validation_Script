@@ -1,27 +1,1497 @@
-bash build/script/validation_git.sh prprdsep25 f82a5cd966714bb52cae24cb310aeaf5d8bb3c0e e380c0a6c4f27235c5ebbccf809cae6aa000708d
-dos2unix: converting file build/testClasses.txt to file build/log/prprdsep25.19_09_2025_01h08m24s.VALIDATION.txt in Unix format...
+[codedev@vlsj-deploybox SFDC]$ pwd
+/data/code/GitHub_prod_validation/branches/2025-20sept-release/SFDC
+[codedev@vlsj-deploybox SFDC]$ git branch
+* 2025-20sept-release
+  master
+[codedev@vlsj-deploybox SFDC]$ 
+[codedev@vlsj-deploybox SFDC]$ 
+[codedev@vlsj-deploybox SFDC]$ bash -x build/script/validation_git.sh prprdsep25 f82a5cd966714bb52cae24cb310aeaf5d8bb3c0e e380c0a6c4f27235c5ebbccf809cae6aa000708d
++ USAGE='>>>>>  Usage: validation_git_sfcli.sh env (replace env with Sandbox or Production alias)   GitHash1 GitHash2 <<<<<<'
++ '[' 3 == 0 ']'
++ '[' prprdsep25 '!=' prprdq325 ']'
++ '[' prprdsep25 '!=' prod ']'
++ '[' prprdsep25 '!=' prprdsep25 ']'
+++ date +%d_%m_%Y_%Hh%Mm%Ss
++ DATE=19_09_2025_01h35m28s
++ SFDC_ORG=prprdsep25
++ bin=build/script
++ property=build/property
++ buildProperty=build/property/build_prprdsep25.properties
++ serverProperty=build/property/prprdsep25.conf
++ gitlast=f82a5cd966714bb52cae24cb310aeaf5d8bb3c0e
++ gitlatest=e380c0a6c4f27235c5ebbccf809cae6aa000708d
++ Logpath=build/log
++ LOCK=build/log/prprdsep25.VALIDATION.LOCK
++ LOG=build/log/prprdsep25.19_09_2025_01h35m28s.VALIDATION.LOG
++ FAILEDTC=build/log/prprdsep25.19_09_2025_01h35m28s.FAILED_TC
++ GITLOG=build/log/prprdsep25.19_09_2025_01h35m28s.GIT.VALIDATION.LOG
++ TCtxt=build/log/prprdsep25.19_09_2025_01h35m28s.VALIDATION.txt
++ TCNAME=build/log/prprdsep25.19_09_2025_01h35m28s.VALIDATION.List
++ GIT_LOG=build/log/prprdsep25.19_09_2025_01h35m28s.SFDC_GIT.log
++ CHANGESETLOG=/tmp/prprdsep25.Changeset.log
++ DEPLOYEDFILE=/tmp/prprdsep25.Deploy.file
+++ grep APIver build/property/prprdsep25.conf
+++ cut -d= -f2
++ API=60.0
++ REPORT_JSON=build/log/prprdsep25.19_09_2025_01h35m28s.report.json
++ HTMLLog=/tmp/prprdsep25.Validation.log.html
++ HTMLFDLog=build/log/prprdsep25.forceDeploy.19_09_2025_01h35m28s.html
++ main prprdsep25 f82a5cd966714bb52cae24cb310aeaf5d8bb3c0e e380c0a6c4f27235c5ebbccf809cae6aa000708d
++ Check_Lock
++ '[' -f build/log/prprdsep25.VALIDATION.LOCK ']'
++ touch build/log/prprdsep25.VALIDATION.LOCK
++ Trap
++ trap Unlock SIGINT
++ Mail_Setup
++ MAIL_TO=debarshi@cadence.com
+++ grep email_cc build/property/prprdsep25.conf
+++ cut -d = -f2
++ CC=rdebnath@cadence.com,debarshi@cadence.com
+++ grep email_to build/property/prprdsep25.conf
+++ cut -d = -f2
++ TO=debarshi@cadence.com,rdebnath@cadence.com
+++ grep email_from build/property/prprdsep25.conf
+++ cut -d = -f2
++ FROM=SFDCdeploy@cadence.com
++ MAIL_LIST='-r SFDCdeploy@cadence.com -c rdebnath@cadence.com,debarshi@cadence.com debarshi@cadence.com,rdebnath@cadence.com'
++ mutt_MAIL_LIST='debarshi@cadence.com,rdebnath@cadence.com -c rdebnath@cadence.com,debarshi@cadence.com'
+++ grep send_email build/property/prprdsep25.conf
+++ cut -d = -f2
++ MAIL=1
++ case ${MAIL} in
++ Prepare_RunTest
++ rm -f build/log/prprdsep25.19_09_2025_01h35m28s.VALIDATION.List
++ rm -f build/log/prprdsep25.19_09_2025_01h35m28s.VALIDATION.txt
++ dos2unix -n build/testClasses.txt build/log/prprdsep25.19_09_2025_01h35m28s.VALIDATION.txt
+dos2unix: converting file build/testClasses.txt to file build/log/prprdsep25.19_09_2025_01h35m28s.VALIDATION.txt in Unix format...
++ cat build/log/prprdsep25.19_09_2025_01h35m28s.VALIDATION.txt
++ grep -v '#'
++ grep -v '^\s*$'
++ sort -u
+++ cat build/log/prprdsep25.19_09_2025_01h35m28s.VALIDATION.List
++ for i in `cat $TCNAME`
++ cp src/classes/CosMenuHeaderControllerTest.cls src/classes/CosMenuHeaderControllerTest.cls-meta.xml changeSetDeploy/src/classes/
++ for i in `cat $TCNAME`
++ cp src/classes/ProductPageCompForCoveoControllerTest.cls src/classes/ProductPageCompForCoveoControllerTest.cls-meta.xml changeSetDeploy/src/classes/
++ for i in `cat $TCNAME`
++ cp 'src/classes/testArticleAttachmentPortalController.*' changeSetDeploy/src/classes/
 cp: cannot stat 'src/classes/testArticleAttachmentPortalController.*': No such file or directory
++ for i in `cat $TCNAME`
++ cp src/classes/TestCOSEntitlementBatchProcess.cls src/classes/TestCOSEntitlementBatchProcess.cls-meta.xml changeSetDeploy/src/classes/
++ for i in `cat $TCNAME`
++ cp src/classes/TestNewArticleExtension_AC.cls src/classes/TestNewArticleExtension_AC.cls-meta.xml changeSetDeploy/src/classes/
++ for i in `cat $TCNAME`
++ cp 'src/classes/testplatformpage.*' changeSetDeploy/src/classes/
 cp: cannot stat 'src/classes/testplatformpage.*': No such file or directory
-jq: error: Could not open file build/log/prprdsep25.19_09_2025_01h08m24s.report.json: No such file or directory
-jq: error: Could not open file build/log/prprdsep25.19_09_2025_01h08m24s.report.json: No such file or directory
-jq: error: Could not open file build/log/prprdsep25.19_09_2025_01h08m24s.report.json: No such file or directory
-jq: error: Could not open file build/log/prprdsep25.19_09_2025_01h08m24s.report.json: No such file or directory
-jq: error: Could not open file build/log/prprdsep25.19_09_2025_01h08m24s.report.json: No such file or directory
++ mapfile -t TEST_CLASSES
++ TEST_FLAGS=()
++ for cls in "${TEST_CLASSES[@]}"
++ cls=CosMenuHeaderControllerTest
++ cls=CosMenuHeaderControllerTest
++ cls=CosMenuHeaderControllerTest
++ [[ -z CosMenuHeaderControllerTest ]]
++ TEST_FLAGS+=(--tests "$cls")
++ for cls in "${TEST_CLASSES[@]}"
++ cls=ProductPageCompForCoveoControllerTest
++ cls=ProductPageCompForCoveoControllerTest
++ cls=ProductPageCompForCoveoControllerTest
++ [[ -z ProductPageCompForCoveoControllerTest ]]
++ TEST_FLAGS+=(--tests "$cls")
++ for cls in "${TEST_CLASSES[@]}"
++ cls=testArticleAttachmentPortalController
++ cls=testArticleAttachmentPortalController
++ cls=testArticleAttachmentPortalController
++ [[ -z testArticleAttachmentPortalController ]]
++ TEST_FLAGS+=(--tests "$cls")
++ for cls in "${TEST_CLASSES[@]}"
++ cls=TestCOSEntitlementBatchProcess
++ cls=TestCOSEntitlementBatchProcess
++ cls=TestCOSEntitlementBatchProcess
++ [[ -z TestCOSEntitlementBatchProcess ]]
++ TEST_FLAGS+=(--tests "$cls")
++ for cls in "${TEST_CLASSES[@]}"
++ cls=TestNewArticleExtension_AC
++ cls=TestNewArticleExtension_AC
++ cls=TestNewArticleExtension_AC
++ [[ -z TestNewArticleExtension_AC ]]
++ TEST_FLAGS+=(--tests "$cls")
++ for cls in "${TEST_CLASSES[@]}"
++ cls=testplatformpage
++ cls=testplatformpage
++ cls=testplatformpage
++ [[ -z testplatformpage ]]
++ TEST_FLAGS+=(--tests "$cls")
++ Validation
++ sf project deploy validate --source-dir changeSetDeploy --test-level RunSpecifiedTests --tests CosMenuHeaderControllerTest --tests ProductPageCompForCoveoControllerTest --tests testArticleAttachmentPortalController --tests TestCOSEntitlementBatchProcess --tests TestNewArticleExtension_AC --tests testplatformpage --target-org prprdsep25 --wait 60 --json
++ cat build/log/prprdsep25.19_09_2025_01h35m28s.VALIDATION.LOG.err
++ cat build/log/prprdsep25.19_09_2025_01h35m28s.VALIDATION.LOG.initial.json
+++ jq -r .status build/log/prprdsep25.19_09_2025_01h35m28s.VALIDATION.LOG.initial.json
++ INITIAL_STATUS=1
++ '[' 1 == 0 ']'
+++ jq -r .name build/log/prprdsep25.19_09_2025_01h35m28s.VALIDATION.LOG.initial.json
++ ERROR_NAME=InvalidProjectWorkspaceError
++ '[' InvalidProjectWorkspaceError == FailedValidationError ']'
++ jq -r .message build/log/prprdsep25.19_09_2025_01h35m28s.VALIDATION.LOG.initial.json
++ grep -iq locked
++ antReturnCode='Failed to obtain result from server within specified time'
++ '[' -f build/log/prprdsep25.19_09_2025_01h35m28s.report.json ']'
++ jq -r .message build/log/prprdsep25.19_09_2025_01h35m28s.VALIDATION.LOG.initial.json
++ jq -r '.result.details | {componentFailures, runTestResult: {failures, codeCoverageWarnings}}' build/log/prprdsep25.19_09_2025_01h35m28s.report.json
+jq: error: Could not open file build/log/prprdsep25.19_09_2025_01h35m28s.report.json: No such file or directory
++ jq -r 'to_entries | map("\(.key): \(.value)") | join("\n")' build/log/prprdsep25.19_09_2025_01h35m28s.VALIDATION.LOG.filtered.json
++ case $antReturnCode in
++ HTML_Report FAILED
++ Report=FAILED
++ SAVEIFS=' 
+'
+++ echo -en '\n\b'
++ IFS='
+'
++ echo '<HTML>'
++ echo '<BODY>'
++ echo '<table width=100%>'
++ '[' FAILED == SUCCEEDED ']'
++ '[' FAILED == FAILED ']'
++ echo '<H3><tr><td bgcolor="SeaShell">prprdsep25 Validation failure report</td></tr></H3>'
+++ jq -r .result.id build/log/prprdsep25.19_09_2025_01h35m28s.report.json
+jq: error: Could not open file build/log/prprdsep25.19_09_2025_01h35m28s.report.json: No such file or directory
++ echo '<H5><tr><td bgcolor="Khaki">Request ID: </td></tr></H5>'
++ echo '<tr><td bgcolor="LightBlue"></tr></td>'
++ echo '<tr><td bgcolor="Yellow"></tr></td>'
++ echo '<a href="https://cdnsfdc.cadence.com/SFDC_LOG/prprdsep25.GIT_f82a5cd966714bb52cae24cb310aeaf5d8bb3c0e-e380c0a6c4f27235c5ebbccf809cae6aa000708d.19_09_2025_01h35m28s">Log and changeset</a>'
++ echo '&nbsp'
++ echo '<a href="https://cdnsfdc.cadence.com/SFDC_LOG/prprdsep25.GIT_f82a5cd966714bb52cae24cb310aeaf5d8bb3c0e-e380c0a6c4f27235c5ebbccf809cae6aa000708d.19_09_2025_01h35m28s/prprdsep25.changesetList.19_09_2025_01h35m28s.html">Changeset List</a>'
++ echo '&nbsp'
++ echo '<a href="https://cdnsfdc.cadence.com/SFDC_LOG/prprdsep25.GIT_f82a5cd966714bb52cae24cb310aeaf5d8bb3c0e-e380c0a6c4f27235c5ebbccf809cae6aa000708d.19_09_2025_01h35m28s/prprdsep25.forceDeploy.19_09_2025_01h35m28s.html">ForceDeploy</a>'
++ echo '<br/>API used: 60.0'
++ jq -r '.result.details.componentFailures[] | [.fileName, .problem] | join(" -- ")' build/log/prprdsep25.19_09_2025_01h35m28s.report.json
+jq: error: Could not open file build/log/prprdsep25.19_09_2025_01h35m28s.report.json: No such file or directory
+++ awk -F ' -- ' '{print $1}' build/log/prprdsep25.19_09_2025_01h35m28s.VALIDATION.LOG.component_failures
+++ uniq
++ echo '<tr><td bgcolor="Yellow"><H4>prprdsep25 Test Class </H4></td></tr>'
++ jq -r '.result.details.runTestResult.failures[] | [.name, .methodName, .message, .stackTrace] | join("\t")' build/log/prprdsep25.19_09_2025_01h35m28s.report.json
+jq: error: Could not open file build/log/prprdsep25.19_09_2025_01h35m28s.report.json: No such file or directory
+++ wc -l
++ ErrorNo=0
++ idx=1
++ IFS=' '
++ read -r CLASS METHOD MSG STACK
++ echo '<tr><td bgcolor="Yellow"><H4>prprdsep25 Code Coverage</H4></td></tr>'
++ jq -r '.result.details.runTestResult.codeCoverageWarnings[] | [.name, .message] | join("\t")' build/log/prprdsep25.19_09_2025_01h35m28s.report.json
+jq: error: Could not open file build/log/prprdsep25.19_09_2025_01h35m28s.report.json: No such file or directory
+++ wc -l
++ CoverageNo=0
++ cov_idx=1
++ IFS=' '
++ read -r NAME MESSAGE
++ Changeset_List
++ cut -d / -f 1,2 --complement
++ sort -u
++ egrep -v 'package.xml|staticResourceFolders.txt'
++ find changeSetDeploy -type f
+++ find changeSetDeploy -type f
+++ egrep -v 'package.xml|staticResourceFolders.txt'
+++ wc -l
++ changesetFile=84
++ echo '<tr><td bgcolor="SeaShell">Changeset file/s ... [84]</td></tr>'
++ NUM=1
+++ cat /tmp/prprdsep25.Deploy.file
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' classes/ArticleAttachmentPortalController.cls == labels/CustomLabels.labels-meta.xml ']'
++ [[ classes/ArticleAttachmentPortalController.cls =~ remoteSiteSettings/ ]]
++ [[ classes/ArticleAttachmentPortalController.cls =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [1] classes/ArticleAttachmentPortalController.cls'
++ echo '</PRE></td></tr>'
+++ git log -1 src/classes/ArticleAttachmentPortalController.cls
+++ sed -e 's/| |/|\ Comment:/g'
+++ sed -e 's/$/\ |/g'
+++ xargs
++ LastAuthor='commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' classes/ArticleAttachmentPortalController.cls-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ classes/ArticleAttachmentPortalController.cls-meta.xml =~ remoteSiteSettings/ ]]
++ [[ classes/ArticleAttachmentPortalController.cls-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [2] classes/ArticleAttachmentPortalController.cls-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/classes/ArticleAttachmentPortalController.cls-meta.xml
+++ xargs
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' classes/ArticleClass.cls == labels/CustomLabels.labels-meta.xml ']'
++ [[ classes/ArticleClass.cls =~ remoteSiteSettings/ ]]
++ [[ classes/ArticleClass.cls =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [3] classes/ArticleClass.cls'
++ echo '</PRE></td></tr>'
+++ git log -1 src/classes/ArticleClass.cls
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
++ LastAuthor='commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' classes/ArticleClass.cls-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ classes/ArticleClass.cls-meta.xml =~ remoteSiteSettings/ ]]
++ [[ classes/ArticleClass.cls-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [4] classes/ArticleClass.cls-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/classes/ArticleClass.cls-meta.xml
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
++ LastAuthor='commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' classes/CosMenuHeaderController.cls == labels/CustomLabels.labels-meta.xml ']'
++ [[ classes/CosMenuHeaderController.cls =~ remoteSiteSettings/ ]]
++ [[ classes/CosMenuHeaderController.cls =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [5] classes/CosMenuHeaderController.cls'
++ echo '</PRE></td></tr>'
+++ git log -1 src/classes/CosMenuHeaderController.cls
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
++ LastAuthor='commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' classes/CosMenuHeaderController.cls-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ classes/CosMenuHeaderController.cls-meta.xml =~ remoteSiteSettings/ ]]
++ [[ classes/CosMenuHeaderController.cls-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [6] classes/CosMenuHeaderController.cls-meta.xml'
++ echo '</PRE></td></tr>'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
+++ git log -1 src/classes/CosMenuHeaderController.cls-meta.xml
++ LastAuthor='commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' classes/CosMenuHeaderControllerTest.cls == labels/CustomLabels.labels-meta.xml ']'
++ [[ classes/CosMenuHeaderControllerTest.cls =~ remoteSiteSettings/ ]]
++ [[ classes/CosMenuHeaderControllerTest.cls =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [7] classes/CosMenuHeaderControllerTest.cls'
++ echo '</PRE></td></tr>'
+++ git log -1 src/classes/CosMenuHeaderControllerTest.cls
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
++ LastAuthor='commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' classes/CosMenuHeaderControllerTest.cls-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ classes/CosMenuHeaderControllerTest.cls-meta.xml =~ remoteSiteSettings/ ]]
++ [[ classes/CosMenuHeaderControllerTest.cls-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [8] classes/CosMenuHeaderControllerTest.cls-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/classes/CosMenuHeaderControllerTest.cls-meta.xml
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
++ LastAuthor='commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' classes/NewArticleExtension_AC.cls == labels/CustomLabels.labels-meta.xml ']'
++ [[ classes/NewArticleExtension_AC.cls =~ remoteSiteSettings/ ]]
++ [[ classes/NewArticleExtension_AC.cls =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [9] classes/NewArticleExtension_AC.cls'
++ echo '</PRE></td></tr>'
+++ git log -1 src/classes/NewArticleExtension_AC.cls
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
++ LastAuthor='commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' classes/NewArticleExtension_AC.cls-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ classes/NewArticleExtension_AC.cls-meta.xml =~ remoteSiteSettings/ ]]
++ [[ classes/NewArticleExtension_AC.cls-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [10] classes/NewArticleExtension_AC.cls-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/classes/NewArticleExtension_AC.cls-meta.xml
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
++ LastAuthor='commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' classes/platformPage.cls == labels/CustomLabels.labels-meta.xml ']'
++ [[ classes/platformPage.cls =~ remoteSiteSettings/ ]]
++ [[ classes/platformPage.cls =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [11] classes/platformPage.cls'
++ echo '</PRE></td></tr>'
+++ git log -1 src/classes/platformPage.cls
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
++ LastAuthor='commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' classes/platformPage.cls-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ classes/platformPage.cls-meta.xml =~ remoteSiteSettings/ ]]
++ [[ classes/platformPage.cls-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [12] classes/platformPage.cls-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/classes/platformPage.cls-meta.xml
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
++ LastAuthor='commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' classes/ProductPageCompForCoveoController.cls == labels/CustomLabels.labels-meta.xml ']'
++ [[ classes/ProductPageCompForCoveoController.cls =~ remoteSiteSettings/ ]]
++ [[ classes/ProductPageCompForCoveoController.cls =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [13] classes/ProductPageCompForCoveoController.cls'
++ echo '</PRE></td></tr>'
+++ git log -1 src/classes/ProductPageCompForCoveoController.cls
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
++ LastAuthor='commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' classes/ProductPageCompForCoveoController.cls-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ classes/ProductPageCompForCoveoController.cls-meta.xml =~ remoteSiteSettings/ ]]
++ [[ classes/ProductPageCompForCoveoController.cls-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [14] classes/ProductPageCompForCoveoController.cls-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/classes/ProductPageCompForCoveoController.cls-meta.xml
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
++ LastAuthor='commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' classes/ProductPageCompForCoveoControllerTest.cls == labels/CustomLabels.labels-meta.xml ']'
++ [[ classes/ProductPageCompForCoveoControllerTest.cls =~ remoteSiteSettings/ ]]
++ [[ classes/ProductPageCompForCoveoControllerTest.cls =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [15] classes/ProductPageCompForCoveoControllerTest.cls'
++ echo '</PRE></td></tr>'
+++ git log -1 src/classes/ProductPageCompForCoveoControllerTest.cls
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
++ LastAuthor='commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' classes/ProductPageCompForCoveoControllerTest.cls-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ classes/ProductPageCompForCoveoControllerTest.cls-meta.xml =~ remoteSiteSettings/ ]]
++ [[ classes/ProductPageCompForCoveoControllerTest.cls-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [16] classes/ProductPageCompForCoveoControllerTest.cls-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/classes/ProductPageCompForCoveoControllerTest.cls-meta.xml
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
++ LastAuthor='commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' classes/TestArticleAttachmentPortalController.cls == labels/CustomLabels.labels-meta.xml ']'
++ [[ classes/TestArticleAttachmentPortalController.cls =~ remoteSiteSettings/ ]]
++ [[ classes/TestArticleAttachmentPortalController.cls =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [17] classes/TestArticleAttachmentPortalController.cls'
++ echo '</PRE></td></tr>'
+++ git log -1 src/classes/TestArticleAttachmentPortalController.cls
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
++ LastAuthor='commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' classes/TestArticleAttachmentPortalController.cls-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ classes/TestArticleAttachmentPortalController.cls-meta.xml =~ remoteSiteSettings/ ]]
++ [[ classes/TestArticleAttachmentPortalController.cls-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [18] classes/TestArticleAttachmentPortalController.cls-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/classes/TestArticleAttachmentPortalController.cls-meta.xml
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
++ LastAuthor='commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' classes/TestCOSEntitlementBatchProcess.cls == labels/CustomLabels.labels-meta.xml ']'
++ [[ classes/TestCOSEntitlementBatchProcess.cls =~ remoteSiteSettings/ ]]
++ [[ classes/TestCOSEntitlementBatchProcess.cls =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [19] classes/TestCOSEntitlementBatchProcess.cls'
++ echo '</PRE></td></tr>'
+++ git log -1 src/classes/TestCOSEntitlementBatchProcess.cls
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
++ LastAuthor='commit 90e690a4ba862064c9db80ebeb1df5d1638535d6 | Author: Supritha D <supritha@cadence.com> | Date: Thu Sep 18 14:29:20 2025 +0530 | Comment: [SFDC-22991]:(Entitlement Backup changes) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 90e690a4ba862064c9db80ebeb1df5d1638535d6 | Author: Supritha D <supritha@cadence.com> | Date: Thu Sep 18 14:29:20 2025 +0530 | Comment: [SFDC-22991]:(Entitlement Backup changes) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' classes/TestCOSEntitlementBatchProcess.cls-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ classes/TestCOSEntitlementBatchProcess.cls-meta.xml =~ remoteSiteSettings/ ]]
++ [[ classes/TestCOSEntitlementBatchProcess.cls-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [20] classes/TestCOSEntitlementBatchProcess.cls-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/classes/TestCOSEntitlementBatchProcess.cls-meta.xml
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
++ LastAuthor='commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' classes/TestNewArticleExtension_AC.cls == labels/CustomLabels.labels-meta.xml ']'
++ [[ classes/TestNewArticleExtension_AC.cls =~ remoteSiteSettings/ ]]
++ [[ classes/TestNewArticleExtension_AC.cls =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [21] classes/TestNewArticleExtension_AC.cls'
++ echo '</PRE></td></tr>'
+++ git log -1 src/classes/TestNewArticleExtension_AC.cls
+++ xargs
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' classes/TestNewArticleExtension_AC.cls-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ classes/TestNewArticleExtension_AC.cls-meta.xml =~ remoteSiteSettings/ ]]
++ [[ classes/TestNewArticleExtension_AC.cls-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [22] classes/TestNewArticleExtension_AC.cls-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/classes/TestNewArticleExtension_AC.cls-meta.xml
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
+++ sed -e 's/$/\ |/g'
++ LastAuthor='commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' classes/TestplatformPage.cls == labels/CustomLabels.labels-meta.xml ']'
++ [[ classes/TestplatformPage.cls =~ remoteSiteSettings/ ]]
++ [[ classes/TestplatformPage.cls =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [23] classes/TestplatformPage.cls'
++ echo '</PRE></td></tr>'
+++ git log -1 src/classes/TestplatformPage.cls
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
+++ sed -e 's/$/\ |/g'
++ LastAuthor='commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' classes/TestplatformPage.cls-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ classes/TestplatformPage.cls-meta.xml =~ remoteSiteSettings/ ]]
++ [[ classes/TestplatformPage.cls-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [24] classes/TestplatformPage.cls-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/classes/TestplatformPage.cls-meta.xml
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
++ LastAuthor='commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' components/CaseDeflectionComponentCoveo.component == labels/CustomLabels.labels-meta.xml ']'
++ [[ components/CaseDeflectionComponentCoveo.component =~ remoteSiteSettings/ ]]
++ [[ components/CaseDeflectionComponentCoveo.component =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [25] components/CaseDeflectionComponentCoveo.component'
++ echo '</PRE></td></tr>'
+++ git log -1 src/components/CaseDeflectionComponentCoveo.component
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' components/CaseDeflectionComponentCoveo.component-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ components/CaseDeflectionComponentCoveo.component-meta.xml =~ remoteSiteSettings/ ]]
++ [[ components/CaseDeflectionComponentCoveo.component-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [26] components/CaseDeflectionComponentCoveo.component-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/components/CaseDeflectionComponentCoveo.component-meta.xml
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' components/Coveo_CommunitySearch.component == labels/CustomLabels.labels-meta.xml ']'
++ [[ components/Coveo_CommunitySearch.component =~ remoteSiteSettings/ ]]
++ [[ components/Coveo_CommunitySearch.component =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [27] components/Coveo_CommunitySearch.component'
++ echo '</PRE></td></tr>'
+++ git log -1 src/components/Coveo_CommunitySearch.component
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' components/Coveo_CommunitySearch.component-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ components/Coveo_CommunitySearch.component-meta.xml =~ remoteSiteSettings/ ]]
++ [[ components/Coveo_CommunitySearch.component-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [28] components/Coveo_CommunitySearch.component-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/components/Coveo_CommunitySearch.component-meta.xml
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' components/MenuSearchComponentForCoveo.component == labels/CustomLabels.labels-meta.xml ']'
++ [[ components/MenuSearchComponentForCoveo.component =~ remoteSiteSettings/ ]]
++ [[ components/MenuSearchComponentForCoveo.component =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [29] components/MenuSearchComponentForCoveo.component'
++ echo '</PRE></td></tr>'
+++ git log -1 src/components/MenuSearchComponentForCoveo.component
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' components/MenuSearchComponentForCoveo.component-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ components/MenuSearchComponentForCoveo.component-meta.xml =~ remoteSiteSettings/ ]]
++ [[ components/MenuSearchComponentForCoveo.component-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [30] components/MenuSearchComponentForCoveo.component-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/components/MenuSearchComponentForCoveo.component-meta.xml
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' components/PlatformPageCompForCoveo.component == labels/CustomLabels.labels-meta.xml ']'
++ [[ components/PlatformPageCompForCoveo.component =~ remoteSiteSettings/ ]]
++ [[ components/PlatformPageCompForCoveo.component =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [31] components/PlatformPageCompForCoveo.component'
++ echo '</PRE></td></tr>'
+++ git log -1 src/components/PlatformPageCompForCoveo.component
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' components/PlatformPageCompForCoveo.component-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ components/PlatformPageCompForCoveo.component-meta.xml =~ remoteSiteSettings/ ]]
++ [[ components/PlatformPageCompForCoveo.component-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [32] components/PlatformPageCompForCoveo.component-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/components/PlatformPageCompForCoveo.component-meta.xml
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' components/ProductPageCompForCoveo.component == labels/CustomLabels.labels-meta.xml ']'
++ [[ components/ProductPageCompForCoveo.component =~ remoteSiteSettings/ ]]
++ [[ components/ProductPageCompForCoveo.component =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [33] components/ProductPageCompForCoveo.component'
++ echo '</PRE></td></tr>'
+++ git log -1 src/components/ProductPageCompForCoveo.component
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' components/ProductPageCompForCoveo.component-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ components/ProductPageCompForCoveo.component-meta.xml =~ remoteSiteSettings/ ]]
++ [[ components/ProductPageCompForCoveo.component-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [34] components/ProductPageCompForCoveo.component-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/components/ProductPageCompForCoveo.component-meta.xml
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' customMetadata/CosLiteCategoryMap.trainingModule.md-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ customMetadata/CosLiteCategoryMap.trainingModule.md-meta.xml =~ remoteSiteSettings/ ]]
++ [[ customMetadata/CosLiteCategoryMap.trainingModule.md-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [35] customMetadata/CosLiteCategoryMap.trainingModule.md-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/customMetadata/CosLiteCategoryMap.trainingModule.md-meta.xml
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
 fatal: ambiguous argument 'src/customMetadata/CosLiteCategoryMap.trainingModule.md-meta.xml': unknown revision or path not in the working tree.
 Use '--' to separate paths from revisions, like this:
 'git <command> [<revision>...] -- [<file>...]'
++ LastAuthor=
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... '
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' customMetadata/Public_Search_Category.trainingModule.md-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ customMetadata/Public_Search_Category.trainingModule.md-meta.xml =~ remoteSiteSettings/ ]]
++ [[ customMetadata/Public_Search_Category.trainingModule.md-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [36] customMetadata/Public_Search_Category.trainingModule.md-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/customMetadata/Public_Search_Category.trainingModule.md-meta.xml
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
 fatal: ambiguous argument 'src/customMetadata/Public_Search_Category.trainingModule.md-meta.xml': unknown revision or path not in the working tree.
 Use '--' to separate paths from revisions, like this:
 'git <command> [<revision>...] -- [<file>...]'
++ LastAuthor=
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... '
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' objects/Article__c/fields/Course_Deep_Link__c.field-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ objects/Article__c/fields/Course_Deep_Link__c.field-meta.xml =~ remoteSiteSettings/ ]]
++ [[ objects/Article__c/fields/Course_Deep_Link__c.field-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [37] objects/Article__c/fields/Course_Deep_Link__c.field-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/objects/Article__c/fields/Course_Deep_Link__c.field-meta.xml
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit a3ed18d6641b8ee18760e9397d1a240b0dcc0e83 | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 04:32:03 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit a3ed18d6641b8ee18760e9397d1a240b0dcc0e83 | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 04:32:03 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' objects/Article__c/fields/Course_Product_Number__c.field-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ objects/Article__c/fields/Course_Product_Number__c.field-meta.xml =~ remoteSiteSettings/ ]]
++ [[ objects/Article__c/fields/Course_Product_Number__c.field-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [38] objects/Article__c/fields/Course_Product_Number__c.field-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/objects/Article__c/fields/Course_Product_Number__c.field-meta.xml
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit a3ed18d6641b8ee18760e9397d1a240b0dcc0e83 | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 04:32:03 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit a3ed18d6641b8ee18760e9397d1a240b0dcc0e83 | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 04:32:03 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' objects/Article__c/fields/Course_Title__c.field-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ objects/Article__c/fields/Course_Title__c.field-meta.xml =~ remoteSiteSettings/ ]]
++ [[ objects/Article__c/fields/Course_Title__c.field-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [39] objects/Article__c/fields/Course_Title__c.field-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/objects/Article__c/fields/Course_Title__c.field-meta.xml
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
++ LastAuthor='commit a3ed18d6641b8ee18760e9397d1a240b0dcc0e83 | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 04:32:03 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit a3ed18d6641b8ee18760e9397d1a240b0dcc0e83 | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 04:32:03 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' objects/Article__c/fields/Course_Version_Number__c.field-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ objects/Article__c/fields/Course_Version_Number__c.field-meta.xml =~ remoteSiteSettings/ ]]
++ [[ objects/Article__c/fields/Course_Version_Number__c.field-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [40] objects/Article__c/fields/Course_Version_Number__c.field-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/objects/Article__c/fields/Course_Version_Number__c.field-meta.xml
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
++ LastAuthor='commit a3ed18d6641b8ee18760e9397d1a240b0dcc0e83 | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 04:32:03 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit a3ed18d6641b8ee18760e9397d1a240b0dcc0e83 | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 04:32:03 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' objects/Article__c/fields/Document_types__c.field-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ objects/Article__c/fields/Document_types__c.field-meta.xml =~ remoteSiteSettings/ ]]
++ [[ objects/Article__c/fields/Document_types__c.field-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [41] objects/Article__c/fields/Document_types__c.field-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/objects/Article__c/fields/Document_types__c.field-meta.xml
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
++ LastAuthor='commit a3ed18d6641b8ee18760e9397d1a240b0dcc0e83 | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 04:32:03 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit a3ed18d6641b8ee18760e9397d1a240b0dcc0e83 | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 04:32:03 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' objects/Article__c/recordTypes/Content_publish.recordType-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ objects/Article__c/recordTypes/Content_publish.recordType-meta.xml =~ remoteSiteSettings/ ]]
++ [[ objects/Article__c/recordTypes/Content_publish.recordType-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [42] objects/Article__c/recordTypes/Content_publish.recordType-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/objects/Article__c/recordTypes/Content_publish.recordType-meta.xml
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
++ LastAuthor='commit a3ed18d6641b8ee18760e9397d1a240b0dcc0e83 | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 04:32:03 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit a3ed18d6641b8ee18760e9397d1a240b0dcc0e83 | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 04:32:03 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' pages/ArticleAttachmentPortal.page == labels/CustomLabels.labels-meta.xml ']'
++ [[ pages/ArticleAttachmentPortal.page =~ remoteSiteSettings/ ]]
++ [[ pages/ArticleAttachmentPortal.page =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [43] pages/ArticleAttachmentPortal.page'
++ echo '</PRE></td></tr>'
+++ git log -1 src/pages/ArticleAttachmentPortal.page
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit dc9badea3c8233b75e18e59f86a9c3221067c8a2 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 20:06:08 2025 +0530 | Comment: [COSII-13288]:(Update bullet style) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit dc9badea3c8233b75e18e59f86a9c3221067c8a2 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 20:06:08 2025 +0530 | Comment: [COSII-13288]:(Update bullet style) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' pages/ArticleAttachmentPortal.page-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ pages/ArticleAttachmentPortal.page-meta.xml =~ remoteSiteSettings/ ]]
++ [[ pages/ArticleAttachmentPortal.page-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [44] pages/ArticleAttachmentPortal.page-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/pages/ArticleAttachmentPortal.page-meta.xml
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
++ LastAuthor='commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' pages/Coveo_CommunitySearch.page == labels/CustomLabels.labels-meta.xml ']'
++ [[ pages/Coveo_CommunitySearch.page =~ remoteSiteSettings/ ]]
++ [[ pages/Coveo_CommunitySearch.page =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [45] pages/Coveo_CommunitySearch.page'
++ echo '</PRE></td></tr>'
+++ git log -1 src/pages/Coveo_CommunitySearch.page
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' pages/Coveo_CommunitySearch.page-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ pages/Coveo_CommunitySearch.page-meta.xml =~ remoteSiteSettings/ ]]
++ [[ pages/Coveo_CommunitySearch.page-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [46] pages/Coveo_CommunitySearch.page-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/pages/Coveo_CommunitySearch.page-meta.xml
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' pages/NewArticle_VP.page == labels/CustomLabels.labels-meta.xml ']'
++ [[ pages/NewArticle_VP.page =~ remoteSiteSettings/ ]]
++ [[ pages/NewArticle_VP.page =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [47] pages/NewArticle_VP.page'
++ echo '</PRE></td></tr>'
+++ git log -1 src/pages/NewArticle_VP.page
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit af69e07eb5d07bc48e0456efa7fe024357d3d96a | Author: Rajesh Debnath <rdebnath@cadence.com> | Date: Thu Sep 18 03:18:31 2025 -0700 | Comment: [SFDC-0000]:(Update) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' pages/NewArticle_VP.page-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ pages/NewArticle_VP.page-meta.xml =~ remoteSiteSettings/ ]]
++ [[ pages/NewArticle_VP.page-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [48] pages/NewArticle_VP.page-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/pages/NewArticle_VP.page-meta.xml
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/3_2 %E2%80%93 Order Management Apttus SuperUser.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/3_2 %E2%80%93 Order Management Apttus SuperUser.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/3_2 %E2%80%93 Order Management Apttus SuperUser.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [49] profiles/3_2 %E2%80%93 Order Management Apttus SuperUser.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/3_2 %E2%80%93 Order Management Apttus SuperUser.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/3_2 - Order Fulfillment - User.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/3_2 - Order Fulfillment - User.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/3_2 - Order Fulfillment - User.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [50] profiles/3_2 - Order Fulfillment - User.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/3_2 - Order Fulfillment - User.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/3_3 - Order Fulfillment - AP.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/3_3 - Order Fulfillment - AP.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/3_3 - Order Fulfillment - AP.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [51] profiles/3_3 - Order Fulfillment - AP.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/3_3 - Order Fulfillment - AP.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/3_4 - Order Management - AP.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/3_4 - Order Management - AP.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/3_4 - Order Management - AP.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [52] profiles/3_4 - Order Management - AP.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/3_4 - Order Management - AP.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/3_5 - Order Management Clone.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/3_5 - Order Management Clone.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/3_5 - Order Management Clone.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [53] profiles/3_5 - Order Management Clone.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/3_5 - Order Management Clone.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/3_5 - Order Management.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/3_5 - Order Management.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/3_5 - Order Management.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [54] profiles/3_5 - Order Management.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/3_5 - Order Management.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/4_1 - Sales Finance _Forecast_.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/4_1 - Sales Finance _Forecast_.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/4_1 - Sales Finance _Forecast_.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [55] profiles/4_1 - Sales Finance _Forecast_.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/4_1 - Sales Finance _Forecast_.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/4_2 - WFO.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/4_2 - WFO.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/4_2 - WFO.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [56] profiles/4_2 - WFO.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/4_2 - WFO.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/4_3 - Sales Finance.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/4_3 - Sales Finance.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/4_3 - Sales Finance.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [57] profiles/4_3 - Sales Finance.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/4_3 - Sales Finance.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/4_4 - Apttus Lightning.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/4_4 - Apttus Lightning.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/4_4 - Apttus Lightning.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [58] profiles/4_4 - Apttus Lightning.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/4_4 - Apttus Lightning.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/4_4 - Apttus Platform Profile.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/4_4 - Apttus Platform Profile.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/4_4 - Apttus Platform Profile.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [59] profiles/4_4 - Apttus Platform Profile.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/4_4 - Apttus Platform Profile.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/4_4 - Apttus Salesforce Profile.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/4_4 - Apttus Salesforce Profile.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/4_4 - Apttus Salesforce Profile.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [60] profiles/4_4 - Apttus Salesforce Profile.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/4_4 - Apttus Salesforce Profile.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ sed -e 's/| |/|\ Comment:/g'
+++ xargs
++ LastAuthor='commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/4_4 - Legal_Apttus.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/4_4 - Legal_Apttus.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/4_4 - Legal_Apttus.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [61] profiles/4_4 - Legal_Apttus.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/4_4 - Legal_Apttus.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/4_4 - Legal.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/4_4 - Legal.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/4_4 - Legal.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [62] profiles/4_4 - Legal.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/4_4 - Legal.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 15f457d3dadeee1a041ea0726723994d930b4da8 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 14:58:23 2025 +0530 | Comment: [COSII-13288]:(Update read profile perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/4_5 - Credit.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/4_5 - Credit.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/4_5 - Credit.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [63] profiles/4_5 - Credit.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/4_5 - Credit.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/4_6 - Revenue Accounting.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/4_6 - Revenue Accounting.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/4_6 - Revenue Accounting.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [64] profiles/4_6 - Revenue Accounting.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/4_6 - Revenue Accounting.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/4_7 - BP Approvers.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/4_7 - BP Approvers.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/4_7 - BP Approvers.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [65] profiles/4_7 - BP Approvers.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/4_7 - BP Approvers.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/4_8 - WFO Nerve Center.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/4_8 - WFO Nerve Center.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/4_8 - WFO Nerve Center.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [66] profiles/4_8 - WFO Nerve Center.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/4_8 - WFO Nerve Center.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/4_8 - WFO Operations2.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/4_8 - WFO Operations2.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/4_8 - WFO Operations2.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [67] profiles/4_8 - WFO Operations2.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/4_8 - WFO Operations2.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/4_8 - WFO Operations.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/4_8 - WFO Operations.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/4_8 - WFO Operations.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [68] profiles/4_8 - WFO Operations.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/4_8 - WFO Operations.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/Analytics Cloud Integration User.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/Analytics Cloud Integration User.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/Analytics Cloud Integration User.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [69] profiles/Analytics Cloud Integration User.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/Analytics Cloud Integration User.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/Cadence COS Integration Profile.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/Cadence COS Integration Profile.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/Cadence COS Integration Profile.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [70] profiles/Cadence COS Integration Profile.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/Cadence COS Integration Profile.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/Cadence CosLite Integration Profile.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/Cadence CosLite Integration Profile.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/Cadence CosLite Integration Profile.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [71] profiles/Cadence CosLite Integration Profile.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/Cadence CosLite Integration Profile.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/Cadence Data Sync Integration Profile.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/Cadence Data Sync Integration Profile.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/Cadence Data Sync Integration Profile.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [72] profiles/Cadence Data Sync Integration Profile.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/Cadence Data Sync Integration Profile.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/Cadence Leandata Integration.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/Cadence Leandata Integration.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/Cadence Leandata Integration.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [73] profiles/Cadence Leandata Integration.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/Cadence Leandata Integration.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/Cadence Readonly Integration Profile.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/Cadence Readonly Integration Profile.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/Cadence Readonly Integration Profile.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [74] profiles/Cadence Readonly Integration Profile.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/Cadence Readonly Integration Profile.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/CDS Info Profile.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/CDS Info Profile.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/CDS Info Profile.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [75] profiles/CDS Info Profile.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/CDS Info Profile.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/COS Community Profile.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/COS Community Profile.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/COS Community Profile.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [76] profiles/COS Community Profile.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/COS Community Profile.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/Customer Community Custom.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/Customer Community Custom.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/Customer Community Custom.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [77] profiles/Customer Community Custom.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/Customer Community Custom.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/SalesforceIQ Integration User.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/SalesforceIQ Integration User.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/SalesforceIQ Integration User.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [78] profiles/SalesforceIQ Integration User.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/SalesforceIQ Integration User.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/Sales Insights Integration User.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/Sales Insights Integration User.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/Sales Insights Integration User.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [79] profiles/Sales Insights Integration User.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/Sales Insights Integration User.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' 'profiles/SVMX Customer Community Plus.profile-meta.xml' == labels/CustomLabels.labels-meta.xml ']'
++ [[ profiles/SVMX Customer Community Plus.profile-meta.xml =~ remoteSiteSettings/ ]]
++ [[ profiles/SVMX Customer Community Plus.profile-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [80] profiles/SVMX Customer Community Plus.profile-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 'src/profiles/SVMX Customer Community Plus.profile-meta.xml'
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit 1e5de36f3d8433b23ccad4dd2fc8d1a1c92c2864 | Author: Patranu Chandra <patranu@cadence.com> | Date: Thu Sep 18 15:09:23 2025 +0530 | Comment: [COSII-13288]:(Updated readonly perm) |'
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' src/env/prod/customSetting/ArticleRelatedConfig__c.csv == labels/CustomLabels.labels-meta.xml ']'
++ [[ src/env/prod/customSetting/ArticleRelatedConfig__c.csv =~ remoteSiteSettings/ ]]
++ [[ src/env/prod/customSetting/ArticleRelatedConfig__c.csv =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [81] src/env/prod/customSetting/ArticleRelatedConfig__c.csv'
++ echo '</PRE></td></tr>'
+++ git log -1 src/src/env/prod/customSetting/ArticleRelatedConfig__c.csv
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
 fatal: ambiguous argument 'src/src/env/prod/customSetting/ArticleRelatedConfig__c.csv': unknown revision or path not in the working tree.
 Use '--' to separate paths from revisions, like this:
 'git <command> [<revision>...] -- [<file>...]'
++ LastAuthor=
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... '
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' src/env/prod/customSetting/GSA_Urls_for_CosMenu__c.csv == labels/CustomLabels.labels-meta.xml ']'
++ [[ src/env/prod/customSetting/GSA_Urls_for_CosMenu__c.csv =~ remoteSiteSettings/ ]]
++ [[ src/env/prod/customSetting/GSA_Urls_for_CosMenu__c.csv =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [82] src/env/prod/customSetting/GSA_Urls_for_CosMenu__c.csv'
++ echo '</PRE></td></tr>'
+++ git log -1 src/src/env/prod/customSetting/GSA_Urls_for_CosMenu__c.csv
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
 fatal: ambiguous argument 'src/src/env/prod/customSetting/GSA_Urls_for_CosMenu__c.csv': unknown revision or path not in the working tree.
 Use '--' to separate paths from revisions, like this:
 'git <command> [<revision>...] -- [<file>...]'
++ LastAuthor=
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... '
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' staticresources/Cadence_Coveo_UI.resource == labels/CustomLabels.labels-meta.xml ']'
++ [[ staticresources/Cadence_Coveo_UI.resource =~ remoteSiteSettings/ ]]
++ [[ staticresources/Cadence_Coveo_UI.resource =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [83] staticresources/Cadence_Coveo_UI.resource'
++ echo '</PRE></td></tr>'
+++ git log -1 src/staticresources/Cadence_Coveo_UI.resource
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
 fatal: ambiguous argument 'src/staticresources/Cadence_Coveo_UI.resource': unknown revision or path not in the working tree.
 Use '--' to separate paths from revisions, like this:
 'git <command> [<revision>...] -- [<file>...]'
++ LastAuthor=
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... '
++ echo '</PRE></td></tr>'
++ for FILE in `cat ${DEPLOYEDFILE}`
++ '[' staticresources/Cadence_Coveo_UI.resource-meta.xml == labels/CustomLabels.labels-meta.xml ']'
++ [[ staticresources/Cadence_Coveo_UI.resource-meta.xml =~ remoteSiteSettings/ ]]
++ [[ staticresources/Cadence_Coveo_UI.resource-meta.xml =~ src/customMetadata/ ]]
++ echo '<tr><td bgcolor="Ivory"><PRE>'
++ echo ' [84] staticresources/Cadence_Coveo_UI.resource-meta.xml'
++ echo '</PRE></td></tr>'
+++ git log -1 src/staticresources/Cadence_Coveo_UI.resource-meta.xml
+++ sed -e 's/$/\ |/g'
+++ xargs
+++ sed -e 's/| |/|\ Comment:/g'
++ LastAuthor='commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '<tr><td bgcolor="Gainsboro"><PRE>'
++ echo 'Last author... commit beffb4ceea8da5f98b33e72fc2bd8a4d50006e45 | Author: debarshi <debarshi@cadence.com> | Date: Wed May 28 00:21:33 2025 -0700 | Comment: [IT-1703903]:(Updating the master with SFCLI) |'
++ echo '</PRE></td></tr>'
++ echo '</table>'
++ echo '</table>'
++ echo '</HTML></BODY>'
+++ date +%d.%b.%Y
++ EMAIL=SFDCdeploy@cadence.com
++ mutt -e 'set content_type=text/html' -s '---prprdsep25---ChangeSet Validation FAILED [19.Sep.2025 PST - git f82a5cd966714bb52cae24cb310aeaf5d8bb3c0e-e380c0a6c4f27235c5ebbccf809cae6aa000708d ]' 'debarshi@cadence.com,rdebnath@cadence.com -c rdebnath@cadence.com,debarshi@cadence.com' -a build/log/prprdsep25.19_09_2025_01h35m28s.VALIDATION.LOG.filtered
++ IFS=' 
+'
++ PublishLOG changeset
++ LogStorePath=/data/public/SFDC_LOG/prprdsep25.GIT_f82a5cd966714bb52cae24cb310aeaf5d8bb3c0e-e380c0a6c4f27235c5ebbccf809cae6aa000708d.19_09_2025_01h35m28s
++ mkdir -p /data/public/SFDC_LOG/prprdsep25.GIT_f82a5cd966714bb52cae24cb310aeaf5d8bb3c0e-e380c0a6c4f27235c5ebbccf809cae6aa000708d.19_09_2025_01h35m28s
++ '[' changeset == changeset ']'
++ cp /tmp/prprdsep25.Changeset.log /data/public/SFDC_LOG/prprdsep25.GIT_f82a5cd966714bb52cae24cb310aeaf5d8bb3c0e-e380c0a6c4f27235c5ebbccf809cae6aa000708d.19_09_2025_01h35m28s/prprdsep25.Changeset.log.19_09_2025_01h35m28s
 cp: cannot stat '/tmp/prprdsep25.Changeset.log': No such file or directory
++ cp build/log/prprdsep25.19_09_2025_01h35m28s.VALIDATION.LOG /data/public/SFDC_LOG/prprdsep25.GIT_f82a5cd966714bb52cae24cb310aeaf5d8bb3c0e-e380c0a6c4f27235c5ebbccf809cae6aa000708d.19_09_2025_01h35m28s/prprdsep25.Deploy.log.19_09_2025_01h35m28s
++ cp /tmp/prprdsep25.Validation.log.html /data/public/SFDC_LOG/prprdsep25.GIT_f82a5cd966714bb52cae24cb310aeaf5d8bb3c0e-e380c0a6c4f27235c5ebbccf809cae6aa000708d.19_09_2025_01h35m28s/prprdsep25.Deploy.log.19_09_2025_01h35m28s.html
++ cp -r changeSetDeploy /data/public/SFDC_LOG/prprdsep25.GIT_f82a5cd966714bb52cae24cb310aeaf5d8bb3c0e-e380c0a6c4f27235c5ebbccf809cae6aa000708d.19_09_2025_01h35m28s/prprdsep25.changeSetDeploy.19_09_2025_01h35m28s
++ cp .html .csv /data/public/SFDC_LOG/prprdsep25.GIT_f82a5cd966714bb52cae24cb310aeaf5d8bb3c0e-e380c0a6c4f27235c5ebbccf809cae6aa000708d.19_09_2025_01h35m28s/
 cp: cannot stat '.html': No such file or directory
 cp: cannot stat '.csv': No such file or directory
++ cp build/log/prprdsep25.19_09_2025_01h35m28s.report.json /data/public/SFDC_LOG/prprdsep25.GIT_f82a5cd966714bb52cae24cb310aeaf5d8bb3c0e-e380c0a6c4f27235c5ebbccf809cae6aa000708d.19_09_2025_01h35m28s/
+cp: cannot stat 'build/log/prprdsep25.19_09_2025_01h35m28s.report.json': No such file or directory
++ Unlock
++ rm build/log/prprdsep25.VALIDATION.LOCK
